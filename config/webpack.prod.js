@@ -1,22 +1,22 @@
-const {merge} = require("webpack-merge");
+const { merge } = require('webpack-merge');
 
-const common = require("./webpack.common");
+const common = require('./webpack.common');
 
 const config = {
-  mode: "production",
-  optimization:{
-    splitChunks:{
-      cacheGroups:{
-        commons:{
-          chunks:"initial",
+  mode: 'production',
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          chunks: 'initial',
           minChunks: 2,
           minSize: 0,
-          name: "common"
+          name: 'common',
         },
-        default: false
-      }
-    }
-  }
-}
+        default: false,
+      },
+    },
+  },
+};
 
-module.exports = merge(common, config)
+module.exports = merge(common, config);

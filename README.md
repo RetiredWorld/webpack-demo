@@ -1,4 +1,4 @@
-# 自己写的一个 webpack demo
+# 自己写的一个 webpack4 demo
 > 这个 demo 主要是用来开发日常的展示的静态页面，而不是开发 SPA，因此不会引入框架（vue，react）。
 >
 > 个人写这个 demo 的原因是 vue 与 react 等等将 js 生生嵌入到了控制中。当然这样的好处是极大扩展了前端功能中。
@@ -18,7 +18,12 @@
 - pug 支持
 - babel 基础支持
 
+## 更新
 
+- 添加 editorconfig 文件
+- 添加 license
+- 添加 eslint 支持
+- 添加 typescript 支持
 
 ## 安装：
 
@@ -64,17 +69,17 @@ yarn run serve
 
 `src/pages` 目录下的每一个文件夹代表一个页面。文件夹的名称代表页面路由。
 
-要新建一个页面，首先在 `src/pages` 下创建一个文件夹。然后创建入口文件 `index.js` 与模板文件 `index.pug`。
+要新建一个页面，首先在 `src/pages` 下创建一个文件夹。然后创建入口文件 `index.ts` 与模板文件 `index.pug`。
 
-然后在 `index.js` 中引入 `app.js`：
+然后在 `index.ts` 中引入 `app.ts`：
 
 ```javascript
-require("../../app.js")
+require("../../app.ts")
 ```
 
 
 
->  根目录下的 `src/app.js` 是公共的入口文件。它不会自己生成页面。默认配置它下引入了 `main.scss` 文件。详见下一小节的 样式 部分。
+>  根目录下的 `src/app.ts` 是公共的入口文件。它不会自己生成页面。默认配置它下引入了 `main.scss` 文件。详见下一小节的 样式 部分。
 
 `index.pug` 没有过多要求，你可以直接按照你熟悉方式书写。但是考虑到大部分页面有大量公共部分，在 `src/template` 下创建了 layout 文件夹。你可以在其中书写模板并导入你的模板：
 
@@ -110,9 +115,9 @@ block content
 
 
 
-### 使用js
+### 使用 ts
 
-对于公共的 `js`，你可以注册在　`app.js`。这样你的入口文件都会导入它。
+对于公共的 `ts`，你可以注册在　`app.ts`。这样你的入口文件都会导入它。
 
 你也可以在入口文件直接书写，或者创建并导入。
 
