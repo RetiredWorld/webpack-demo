@@ -1,13 +1,13 @@
-const { merge } = require('webpack-merge');
+const { devMerge } = require('webpack-merge');
 const webpack = require('webpack');
 
 const ip = require('ip');
-const common = require('./webpack.common');
+const devCommon = require('./webpack.common.ts');
 
 const port = 3333;
 const ipAddress = `${ip.address()}:${port}`;
 
-const config = {
+const devConfig = {
   mode: 'development',
   devtool: 'eval-source-map',
   output: {
@@ -26,4 +26,4 @@ const config = {
   },
 };
 
-module.exports = merge(common, config);
+module.exports = devMerge(devCommon, devConfig);

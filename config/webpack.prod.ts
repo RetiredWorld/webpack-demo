@@ -1,8 +1,8 @@
-const { merge } = require('webpack-merge');
+const { prodMerge } = require('webpack-merge');
 
-const common = require('./webpack.common');
+const prodCommon = require('./webpack.common.ts');
 
-const config = {
+const prodConfig = {
   mode: 'production',
   optimization: {
     splitChunks: {
@@ -19,4 +19,4 @@ const config = {
   },
 };
 
-module.exports = merge(common, config);
+module.exports = prodMerge(prodCommon, prodConfig);
