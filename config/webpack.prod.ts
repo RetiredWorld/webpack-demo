@@ -1,6 +1,9 @@
 const { merge: prodMerge } = require('webpack-merge');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const prodCommon = require('./webpack.common.ts');
+
+const prodPlugins = [new CleanWebpackPlugin()];
 
 const prodConfig = {
   mode: 'production',
@@ -17,6 +20,7 @@ const prodConfig = {
       },
     },
   },
+  plugins: prodPlugins,
 };
 
 module.exports = prodMerge(prodCommon, prodConfig);

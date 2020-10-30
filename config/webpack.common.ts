@@ -4,6 +4,7 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const distPath = path.resolve(__dirname, '../dist'); // output path
 const sharedPath = 'common/'; // shared file(css | js) location(relative to your output path)
@@ -22,6 +23,11 @@ const plugins = envName === 'development' ? [] : [
 ];
 // uglify css
 plugins.push(new OptimizeCssAssetsWebpackPlugin());
+plugins.push(new CopyWebpackPlugin({
+  patterns: [
+    { from: 'public', to: '' },
+  ],
+}));
 
 // using fs to generate multipage app
 const dirs = fs.readdirSync(pagePath);

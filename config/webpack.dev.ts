@@ -23,6 +23,7 @@ const devConfig = {
     inline: true,
     port,
     public: ipAddress,
+    quiet: true,
   },
 };
 
