@@ -1,4 +1,4 @@
-const { prodMerge } = require('webpack-merge');
+const { merge: prodMerge } = require('webpack-merge');
 
 const prodCommon = require('./webpack.common.ts');
 

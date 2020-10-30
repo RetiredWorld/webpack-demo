@@ -1,4 +1,4 @@
-const { devMerge } = require('webpack-merge');
+const { merge: devMerge } = require('webpack-merge');
 const webpack = require('webpack');
 
 const ip = require('ip');
@@ -27,3 +27,4 @@ const devConfig = {
 };
 
 module.exports = devMerge(devCommon, devConfig);
+exports.esModule = true;

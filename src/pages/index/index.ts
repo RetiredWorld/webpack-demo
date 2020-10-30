@@ -1,1 +1,1 @@
-require('../../app.ts');
+import '../../app.ts';
