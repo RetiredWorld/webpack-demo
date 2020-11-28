@@ -25,7 +25,7 @@ const plugins = envName === 'development' ? [] : [
 plugins.push(new OptimizeCssAssetsWebpackPlugin());
 plugins.push(new CopyWebpackPlugin({
   patterns: [
-    { from: 'public', to: '' },
+    { from: 'static', to: '' },
   ],
 }));
 
